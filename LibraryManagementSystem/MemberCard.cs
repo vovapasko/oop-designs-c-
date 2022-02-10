@@ -10,7 +10,7 @@ namespace OopDesigns.LibraryManagementSystem
 
         private string generateBarcode()
         {
-            return System.Guid.NewGuid().ToString();
+            return Helper.GenerateUuid();
         }
     }
 }
