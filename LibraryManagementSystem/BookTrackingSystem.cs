@@ -1,10 +1,14 @@
+using System;
 using System.Collections.Generic;
 namespace OopDesigns.LibraryManagementSystem
 {
-    public class BookTrackingSystem
+    public abstract class BookTrackingSystem : BookSearchEngine
     {
-        private Dictionary<Member, List<BookItem>> memberBooksDictionary;
-        private Dictionary<BookItem, Member> booksMemberDictionary;
+        public Dictionary<Member, List<BookItem>> memberBooksDictionary { get; }
+        public Dictionary<BookItem, Member> booksMemberDictionary { get; }
+
+        public List<Book> Books { get; }
+        private List<BookReservation> reservations;
         private List<BookCheckout> checkouts;
         public void AddCheckout(BookCheckout newCheckout)
         {
@@ -22,6 +26,10 @@ namespace OopDesigns.LibraryManagementSystem
             }
             booksMemberDictionary.Add(newCheckout.BookItem, newCheckout.Member);
         }
+        public void AddReservation(BookReservation newReservation)
+        {
+            reservations.Add(newReservation);
+        }
         public List<BookItem> FetchBooksByMember(Member member)
         {
             return memberBooksDictionary[member];
@@ -30,5 +38,14 @@ namespace OopDesigns.LibraryManagementSystem
         {
             return booksMemberDictionary[bookItem];
         }
+        public void AddBook(Book newBook)
+        {
+            Books.Add(newBook);
+        }
+
+        public abstract List<Book> GetBySubject(string subject);
+        public abstract List<Book> GetByAuthor(string author);
+        public abstract List<Book> GetByTitle(string title);
+        public abstract List<Book> GetByPublicationDate(DateTime publicationDate);
     }
 }

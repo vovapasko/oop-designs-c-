@@ -9,6 +9,5 @@ namespace OopDesigns.LibraryManagementSystem
             System.Console.WriteLine("Entry point of app");
         }
 
-
     }
 }
