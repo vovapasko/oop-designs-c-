@@ -7,7 +7,7 @@ namespace OopDesigns.LibraryManagementSystem
         public Member(string login, string password) : base(login, password)
         {
         }
-        private int checkoutsNumber;
+        public List<BookItem> CheckedOutBooks { get; }
         public Profile profile { get; set; }
         public MemberCard memberCard { get; }
         private BookSearchEngine bookRepository;
@@ -33,11 +33,11 @@ namespace OopDesigns.LibraryManagementSystem
 
         public BookCheckout CheckoutBook(BookItem bookItem)
         {
-            if (checkoutsNumber > Configs.MAX_DAYS_TO_LOAN)
+            if (CheckedOutBooks.Count > Configs.MAX_DAYS_TO_LOAN)
             {
                 throw new System.Exception("You have too many books loaned");
             }
-            checkoutsNumber++;
+            CheckedOutBooks.Add(bookItem);
             return new BookCheckout(bookItem, this);
         }
 
