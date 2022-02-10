@@ -3,23 +3,12 @@ namespace OopDesigns.LibraryManagementSystem
 {
     public class ManagementSystem
     {
-        private IRepository<Member, string> memberRepository;
-        private BookSearchEngine bookRepository;
-
+        private AuthenticationSystem authenticationSystem { get; }
         public void run()
         {
-            greetings();
-        }
-
-        private void greetings()
-        {
+            System.Console.WriteLine("Entry point of app");
         }
 
 
-
-        private void displayMessage(string message)
-        {
-            System.Console.WriteLine(message);
-        }
     }
 }

@@ -1,11 +1,12 @@
+using System;
 using System.Collections.Generic;
 namespace OopDesigns.LibraryManagementSystem
 {
     public interface BookSearchEngine
     {
-        List<Book> GetBooks();
-        List<Book> GetByAuthor();
-        List<Book> GetByTitle();
-        List<Book> GetByPublicationDate();
+        List<Book> GetBySubject(string subject);
+        List<Book> GetByAuthor(string author);
+        List<Book> GetByTitle(string title);
+        List<Book> GetByPublicationDate(DateTime publicationDate);
     }
 }
