@@ -2,13 +2,15 @@ namespace OopDesigns.LibraryManagementSystem
 {
     public class BookCheckout
     {
-        public BookItem bookItem { get; }
-        public Member member { get; }
+        public string CheckoutId { get; }
+        public BookItem BookItem { get; }
+        public Member Member { get; }
 
         public BookCheckout(BookItem bookItem, Member member)
         {
-            this.bookItem = bookItem;
-            this.member = member;
+            this.CheckoutId = Helper.GenerateUuid();
+            this.BookItem = bookItem;
+            this.Member = member;
         }
     }
 }
