@@ -41,7 +41,7 @@ namespace OopDesigns.LibraryManagementSystem
             return new BookCheckout(bookItem, this);
         }
 
-        public BookReservation ReserveBook(Book book)
+        public BookReservation ReserveBook(BookItem book)
         {
             return new BookReservation(book, this);
         }

@@ -3,13 +3,13 @@ namespace OopDesigns.LibraryManagementSystem
     public class BookReservation
     {
         public string ReservationId { get; }
-        public Book Book { get; }
+        public BookItem BookItem { get; }
         public Member Member { get; }
 
-        public BookReservation(Book book, Member member)
+        public BookReservation(BookItem book, Member member)
         {
             this.ReservationId = Helper.GenerateUuid();
-            this.Book = book;
+            this.BookItem = book;
             this.Member = member;
         }
     }
