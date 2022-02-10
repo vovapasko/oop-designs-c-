@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 namespace OopDesigns.LibraryManagementSystem
 {
     public abstract class BookTrackingSystem : BookSearchEngine
@@ -25,6 +26,11 @@ namespace OopDesigns.LibraryManagementSystem
                 memberBooksDictionary.Add(newCheckout.Member, booksList);
             }
             booksMemberDictionary.Add(newCheckout.BookItem, newCheckout.Member);
+        }
+
+        public BookCheckout GetBookCheckout(BookItem bookItem)
+        {
+            return checkouts.Where(bi => bi.BookItem == bookItem).FirstOrDefault();
         }
         public void AddReservation(BookReservation newReservation)
         {

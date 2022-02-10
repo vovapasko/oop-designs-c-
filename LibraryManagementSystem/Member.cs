@@ -45,6 +45,10 @@ namespace OopDesigns.LibraryManagementSystem
         {
             return new BookReservation(book, this);
         }
-
+        public BookItem ReturnBook(BookItem bookItem)
+        {
+            CheckedOutBooks.Remove(bookItem);
+            return bookItem;
+        }
     }
 }
