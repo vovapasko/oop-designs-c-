@@ -1,12 +1,11 @@
 using System;
 namespace OopDesigns.ParkingLot
 {
-    internal class EntryPoint
+    public class ParkingExitPoint
     {
-        public ParkingTicket CheckIn(Customer customer)
+        public Invoice Checkout(ParkingTicket ticket)
         {
             throw new NotImplementedException();
         }
-
     }
 }

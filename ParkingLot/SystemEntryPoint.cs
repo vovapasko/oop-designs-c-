@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace OopDesigns.ParkingLot
 {
     public class SystemEntryPoint
@@ -8,8 +10,15 @@ namespace OopDesigns.ParkingLot
 
         public void Run()
         {
-
+            parkingUseCase();
         }
 
+        private void parkingUseCase()
+        {
+            var ticket = parkingLotSystem.StartParking(parkingLotSystem.EntryPoints.First(), customer);
+            customer.Ticket = ticket;
+            Invoice invoice = parkingLotSystem.FinishParking(parkingLotSystem.ExitPoints.First(), customer);
+            customer.PayCard(invoice);
+        }
     }
 }

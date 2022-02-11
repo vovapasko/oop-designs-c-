@@ -2,9 +2,18 @@ namespace OopDesigns.ParkingLot
 {
     public class Customer
     {
-        public Vehicle vehicle { get; }
-        public Wallet wallet;
+        public Vehicle Vehicle { get; }
+        public Wallet Wallet { get; }
+        public ParkingTicket Ticket { get; set; }
 
+        public bool PayCash(Invoice invoice)
+        {
+            return true;
+        }
 
+        public bool PayCard(Invoice invoice)
+        {
+            return true;
+        }
     }
 }
