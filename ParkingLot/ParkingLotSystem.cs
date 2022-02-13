@@ -9,11 +9,12 @@ namespace OopDesigns.ParkingLot
 
         public ParkingTicket StartParking(ParkingEntryPoint parkingEntryPoint, Customer customer)
         {
+
             return parkingEntryPoint.CheckIn(customer);
         }
         public void FinishParking(ParkingExitPoint exitPoint, Customer customer)
         {
-            exitPoint.FinishParking(customer.Ticket);
+            exitPoint.PayForParking(customer.Ticket);
         }
     }
 }

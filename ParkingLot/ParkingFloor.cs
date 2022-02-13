@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 namespace OopDesigns.ParkingLot
 {
-    internal class ParkingFloor
+    public class ParkingFloor
     {
+        List<ParkingSpot> parkingSpots;
     }
 }
