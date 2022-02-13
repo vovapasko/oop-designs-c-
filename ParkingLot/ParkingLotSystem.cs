@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 namespace OopDesigns.ParkingLot
 {
@@ -9,9 +10,28 @@ namespace OopDesigns.ParkingLot
 
         public ParkingTicket StartParking(ParkingEntryPoint parkingEntryPoint, Customer customer)
         {
-
-            return parkingEntryPoint.CheckIn(customer);
+            if (hasFreeSpot())
+            {
+                return parkingEntryPoint.CheckIn(customer);
+            }
+            else
+            {
+                throw new System.Exception("No free places for parking");
+            }
         }
+
+        private bool hasFreeSpot()
+        {
+            foreach (var floor in floors)
+            {
+                if (floor.HasFreePlaces())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void FinishParking(ParkingExitPoint exitPoint, Customer customer)
         {
             exitPoint.PayForParking(customer.Ticket);
