@@ -17,8 +17,7 @@ namespace OopDesigns.ParkingLot
         {
             var ticket = parkingLotSystem.StartParking(parkingLotSystem.EntryPoints.First(), customer);
             customer.Ticket = ticket;
-            Invoice invoice = parkingLotSystem.FinishParking(parkingLotSystem.ExitPoints.First(), customer);
-            customer.PayCard(invoice);
+            parkingLotSystem.FinishParking(parkingLotSystem.ExitPoints.First(), customer);
         }
     }
 }

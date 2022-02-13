@@ -11,9 +11,9 @@ namespace OopDesigns.ParkingLot
         {
             return parkingEntryPoint.CheckIn(customer);
         }
-        public Invoice FinishParking(ParkingExitPoint exitPoint, Customer customer)
+        public void FinishParking(ParkingExitPoint exitPoint, Customer customer)
         {
-            return exitPoint.Checkout(customer.Ticket);
+            exitPoint.FinishParking(customer.Ticket);
         }
     }
 }

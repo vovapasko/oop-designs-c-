@@ -7,5 +7,7 @@ namespace OopDesigns.ParkingLot
         public string Id { get; }
         public Customer IssuedTo { get; }
         public AdditionalInfo metainformation { get; }
+
+        public TicketStatus Status { get; set; }
     }
 }
